@@ -25,7 +25,7 @@ function ForgotPassword() {
           <h1 className="text-[1.875rem] font-semibold leading-[2.375rem] text-richblack-5">
             {!emailSent ? "Reset your password" : "Check email"}
           </h1>
-          <p className="my-4 text-[1.125rem] leading-[1.625rem] text-richblack-100">
+          <p className="my-4 text-[1.125rem] leading-[1.625rem] text-yellow-100">
             {!emailSent
               ? "Stay Calm. We'll email you instructions to reset your password. If you dont have access to your email we can try account recovery"
               : `We have sent the reset email to ${email}`}
@@ -43,7 +43,7 @@ function ForgotPassword() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter email address"
-                  className="form-style w-full"
+                  className="form-style bg-orange-400 w-full"
                 />
               </label>
             )}

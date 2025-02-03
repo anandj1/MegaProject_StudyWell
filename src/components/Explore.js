@@ -32,22 +32,22 @@ const ExploreMore = () => {
         <div className="text-4xl font-semibold text-center my-10">
           Unlock the
           <Highlight text={" Power of Code"} />
-          <p className="text-center text-fuchsia-600 text-lg font-semibold mt-3">
+          <p className="text-center text-purple-300 text-lg font-semibold mt-3">
             Learn to Build Anything You Can Imagine
           </p>
         </div>
       </div>
 
       {/* Tabs Section */}
-      <div className="hidden lg:flex gap-5 -mt-2 mx-auto w-max bg-purple-900 text-blue-100 p-1 rounded-full font-medium  shadow-custom-shadow">
+      <div className="hidden lg:flex gap-5 -mt-2 mx-auto w-max bg-purple-600 text-black  p-1 rounded-full font-bold shadow-lg shadow-purple-50">
         {tabsName.map((ele, index) => {
           return (
             <div
               className={` text-[16px] flex flex-row items-center gap-2 ${
                 currentTab === ele
-                  ? " bg-purple-950 text-blue-200 font-medium"
-                  : "text-blue-100"
-              } px-7 py-[7px] rounded-full transition-all duration-200 cursor-pointer hover:bg-richblack-900 hover:text-richblack-5`}
+                  ? " bg-purple-950 text-yellow-5 font-bold"
+                  : " text-pink-100"
+              } px-7 py-[7px] rounded-full transition-all duration-200 cursor-pointer hover:bg-yellow-200 hover:text-orange-700`}
               key={index}
               onClick={() => setMyCards(ele)}
             >

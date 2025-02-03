@@ -12,6 +12,7 @@ import Instructor from '../components/Instructor'
 import Footer from '../components/common/Footer'
 import ExploreMore from '../components/Explore'
 
+
 const Home = () => {
   return (
     <div>
@@ -19,8 +20,8 @@ const Home = () => {
         <div className=' relative  mx-auto flex flex-col items-center max-w-max text-white font-nunito font-medium justify-between'>
 
          <Link to={"/signup"}>
-         <button className='mx-auto rounded-full font-bold text-xl transition-all text-blue-400 duration-500 bg-purple-800 p-3 mt-16 hover:scale-110 shadow-lg  hover:bg-purple-900 '>
-            <div className=' flex items-center gap-6  '>
+         <button className='mx-auto rounded-full font-bold text-xl shaodw-md shadow-purple-500 transition-all text-yellow-50 duration-500 bg-fuchsia-700 p-3 mt-16 hover:scale-110 shadow-lg  hover:bg-fuchsia-800'>
+            <div className=' flex items-center gap-6   '>
                 <p>Wanna become an Instructor? </p><FaArrowRightLong />
 
 
@@ -198,14 +199,11 @@ const Home = () => {
         {/* Section 3 */}
 
 
-        <div className=" bg-black  flex flex-col items-center justify-between gap-8 text-white">
+        <div className="   flex flex-col items-center justify-between gap-8 text-white">
         
         <Instructor />
-        <h1 className="text-center text-4xl font-semibold mt-8 shadow-custom-shadow-1">
-          Reviews from other learners
-        </h1>
+       
 
-        {/* <ReviewSlider /> */}
 
         </div>
 

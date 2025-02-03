@@ -1,4 +1,5 @@
-const otpTemplate = (otp) => {
+import logo from '../../src/assets/Logo/StudyWell.png'
+const otpTemplate = (firstName,otp) => {
 	return `<!DOCTYPE html>
 	<html>
 	
@@ -66,11 +67,11 @@ const otpTemplate = (otp) => {
 	
 	<body>
 		<div class="container">
-			<a href=""><img class="logo"
-					src="https://github.com/anandj1/Router-Project_-Study-Well/blob/main/src/assets/StudyWell.png" alt="Studywell Logo"></a>
+			<a href="https://ibb.co/7tDPncMz"><img class="logo"
+					src=${logo} alt="Studywell Logo"></a>
 			<div class="message">OTP Verification Email</div>
 			<div class="body">
-				<p>Dear User,</p>
+				<p>Dear ${firstName},</p>
 				<p>Thank you for registering with Studywell. To complete your registration, please use the following OTP
 					(One-Time Password) to verify your account:</p>
 				<h2 class="highlight">${otp}</h2>

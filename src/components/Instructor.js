@@ -21,7 +21,7 @@ const Instructor = () => {
             </h1>
            
 
-            <p className="font-medium text-[16px] text-justify w-[70%] text-richblack-300">
+            <p className="font-medium text-[16px] text-justify w-[70%] text-yellow-200">
               Instructors from around the world teach millions of students on
               StudyWell. We provide the tools and skills to teach what you
               love.

@@ -1,3 +1,4 @@
+
 exports.courseEnrollmentEmail = (courseName, name) => {
     return `<!DOCTYPE html>
     <html>
@@ -67,7 +68,7 @@ exports.courseEnrollmentEmail = (courseName, name) => {
     
     <body>
         <div class="container">
-            <a href="https://studywell-edtech-project.vercel.app"><img class="logo" src="https://github.com/anandj1/Router-Project_-Study-Well/blob/main/src/assets/StudyWell.png"
+            <a href=${logo}><img class="logo" src="https://github.com/anandj1/Router-Project_-Study-Well/blob/main/src/assets/StudyWell.png"
                     alt="StudyWell Logo"></a>
             <div class="message">Course Registration Confirmation</div>
             <div class="body">
