@@ -13,24 +13,42 @@ function RatingStars({ Review_Count, Star_Size }) {
   })
 
   useEffect(() => {
-    const wholeStars = Math.floor(Review_Count) || 0
+    const rating = parseFloat(Review_Count) || 0
+    const fullStars = Math.floor(rating)
+    const decimal = rating - fullStars
+    const hasHalfStar = decimal >= 0.5
+
     SetStarCount({
-      full: wholeStars,
-      half: Number.isInteger(Review_Count) ? 0 : 1,
-      empty: Number.isInteger(Review_Count) ? 5 - wholeStars : 4 - wholeStars,
+      full: fullStars,
+      half: hasHalfStar ? 1 : 0,
+      empty: 5 - fullStars - (hasHalfStar ? 1 : 0),
     })
   }, [Review_Count])
+
   return (
     <div className="flex gap-1 text-yellow-100">
-      {[...new Array(starCount.full)].map((_, i) => {
-        return <TiStarFullOutline key={i} size={Star_Size || 20} />
-      })}
-      {[...new Array(starCount.half)].map((_, i) => {
-        return <TiStarHalfOutline key={i} size={Star_Size || 20} />
-      })}
-      {[...new Array(starCount.empty)].map((_, i) => {
-        return <TiStarOutline key={i} size={Star_Size || 20} />
-      })}
+      {[...Array(starCount.full)].map((_, i) => (
+        <TiStarFullOutline 
+          key={`full-${i}`} 
+          size={Star_Size || 20} 
+          className="text-yellow-100"
+        />
+      ))}
+      
+      {starCount.half > 0 && (
+        <TiStarHalfOutline 
+          size={Star_Size || 20} 
+          className="text-yellow-100"
+        />
+      )}
+      
+      {[...Array(starCount.empty)].map((_, i) => (
+        <TiStarOutline 
+          key={`empty-${i}`} 
+          size={Star_Size || 20} 
+          className="text-yellow-100"
+        />
+      ))}
     </div>
   )
 }
