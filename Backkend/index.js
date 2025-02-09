@@ -25,6 +25,8 @@ app.use(
 	cors({
 		origin:["http://localhost:3000","https://megaproject-studywell-1.onrender.com","https://megaproject-studywell.onrender.com/api/v1"],
 		credentials:true,
+		methods: ["GET", "POST", "PUT", "DELETE"],
+		allowedHeaders: ["Content-Type", "Authorization"]
 	})
 )
 
