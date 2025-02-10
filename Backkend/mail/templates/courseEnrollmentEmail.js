@@ -1,5 +1,5 @@
 
-exports.courseEnrollmentEmail = (courseName, name) => {
+exports.courseEnrollmentEmail = ( name,courseName) => {
     return `<!DOCTYPE html>
     <html>
     
