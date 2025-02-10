@@ -82,14 +82,7 @@ function App() {
           }
         /> 
           // In your Routes component
-<Route
-  path="reset-password/:token"
-  element={
-    <OpenRoute>
-      <UpdatePassword />
-    </OpenRoute>
-  }
-/>
+
 
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
