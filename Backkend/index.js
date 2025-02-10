@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin:["http://localhost:3000","https://megaproject-studywell-1.onrender.com","https://megaproject-studywell.onrender.com/api/v1"],
+		origin:["https://megaproject-studywell-1.onrender.com","https://megaproject-studywell.onrender.com/api/v1","http://localhost:3000"],
 		credentials:true,
 		methods: ["GET", "POST", "PUT", "DELETE"],
 		allowedHeaders: ["Content-Type", "Authorization"]
@@ -47,13 +47,17 @@ app.use("/api/v1/payment", paymentRoutes);
 app.use("/api/v1/reach", contactUsRoute);
 
 //def route
-
-app.get("/", (req, res) => {
-	return res.json({
-		success:true,
-		message:'Your server is up and running....'
-	});
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
+
+
+// app.get("/", (req, res) => {
+// 	return res.json({
+// 		success:true,
+// 		message:'Your server is up and running....'
+// 	});
+// });
 
 app.listen(PORT, () => {
 	console.log(`App is running at ${PORT}`)
