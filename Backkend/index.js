@@ -22,13 +22,20 @@ database.connect();
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-	cors({
-		origin:["https://megaproject-studywell-1.onrender.com","https://megaproject-studywell.onrender.com/api/v1","http://localhost:3000"],
-		credentials:true,
-		methods: ["GET", "POST", "PUT", "DELETE"],
-		allowedHeaders: ["Content-Type", "Authorization"]
-	})
+  cors({
+    origin: [
+      "https://megaproject-studywell-1.onrender.com",
+      "https://megaproject-studywell.onrender.com",
+      "https://megaproject-studywell.onrender.com/api/v1"
+	    
+      "http://localhost:3000"
+    ],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  })
 )
+
 
 app.use(
 	fileUpload({
