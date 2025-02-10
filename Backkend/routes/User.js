@@ -44,5 +44,34 @@ router.post("/reset-password-token", resetPasswordToken)
 // Route for resetting user's password after verification
 router.post("/reset-password", resetPassword)
 
+// Add this route to handle direct URL access
+router.get("/update-password/:token", async (req, res) => {
+  try {
+    const { token } = req.params;
+    const user = await User.findOne({ 
+      token: token,
+      resetPasswordExpires: { $gt: Date.now() }
+    });
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "Invalid or expired token"
+      });
+    }
+
+    res.json({
+      success: true,
+      message: "Token is valid"
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error validating token"
+    });
+  }
+});
+
+
 // Export the router for use in the main application
 module.exports = router
