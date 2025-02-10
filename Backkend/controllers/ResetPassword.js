@@ -25,8 +25,8 @@ exports.resetPasswordToken = async (req, res) => {
     );
     console.log("DETAILS", updatedDetails);
 
-    // Using direct frontend URL
-    const url = `https://megaproject-studywell-1.onrender.com/update-password/${token}`;
+    // Create the reset URL using FRONTEND_URL from environment variables
+    const url = `${process.env.FRONTEND_URL}/update-password/${token}`;
 
     await mailSender(
       email,
