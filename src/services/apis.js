@@ -1,4 +1,4 @@
-const BASE_URL = "https://megaproject-studywell.onrender.com/api/v1"
+const BASE_URL = process.env.REACT_APP_BASE_URL || "https://megaproject-studywell.onrender.com/api/v1"
 
 // AUTH ENDPOINTS
 export const endpoints = {
@@ -38,8 +38,7 @@ export const courseEndpoints = {
   DELETE_SECTION_API: BASE_URL + "/course/deleteSection",
   DELETE_SUBSECTION_API: BASE_URL + "/course/deleteSubSection",
   DELETE_COURSE_API: BASE_URL + "/course/deleteCourse",
-  GET_FULL_COURSE_DETAILS_AUTHENTICATED:
-    BASE_URL + "/course/getFullCourseDetails",
+  GET_FULL_COURSE_DETAILS_AUTHENTICATED: BASE_URL + "/course/getFullCourseDetails",
   LECTURE_COMPLETION_API: BASE_URL + "/course/updateCourseProgress",
   CREATE_RATING_API: BASE_URL + "/course/createRating",
 }
@@ -49,7 +48,7 @@ export const ratingsEndpoints = {
   REVIEWS_DETAILS_API: BASE_URL + "/course/getReviews",
 }
 
-// CATAGORIES API
+// CATEGORIES API
 export const categories = {
   CATEGORIES_API: BASE_URL + "/course/showAllCategories",
 }
@@ -58,6 +57,7 @@ export const categories = {
 export const catalogData = {
   CATALOGPAGEDATA_API: BASE_URL + "/course/getCategoryPageDetails",
 }
+
 // CONTACT-US API
 export const contactusEndpoint = {
   CONTACT_US_API: BASE_URL + "/reach/contact",
